@@ -11,7 +11,7 @@ public class FunRestController {
     }
 
     //expose a new endpoint for "workout"
-    @GetMapping("/workout")
+    @GetMapping("/workouta")
     public String getDailyWorkout(){
         return "Run a hard 5kvvv!";
     }
