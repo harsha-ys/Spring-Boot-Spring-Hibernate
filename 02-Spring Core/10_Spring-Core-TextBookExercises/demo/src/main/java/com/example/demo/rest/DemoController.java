@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class DemoController {
 
-    @RequestMapping("/home/{color}")
+    @RequestMapping("/dhome/{color}")
     public String home(@PathVariable String color, Model page){
         page.addAttribute("username", "Yoshith");
         page.addAttribute("color", color);
