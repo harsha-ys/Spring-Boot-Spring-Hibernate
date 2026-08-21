@@ -10,24 +10,22 @@ import java.util.logging.Logger;
 
 @RestController
 public class PaymentController {
-/*    private static Logger logger =
-            Logger.getLogger(PaymentController.class.getName());
+    private static Logger logger = Logger.getLogger(PaymentController.class.getName());
     @PostMapping("/payment")
-    public ResponseEntity<PaymentDetails> makePayment(
-            @RequestBody PaymentDetails paymentDetails) {
+    public ResponseEntity<PaymentDetails> makePayment(@RequestBody PaymentDetails paymentDetails) {
         logger.info("Received payment " + paymentDetails.getAmount());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(paymentDetails);
-    }*/
+    }
 
-    private final PaymentService paymentService;
-    public PaymentController(PaymentService paymentService) {
-        this.paymentService = paymentService;
-    }
-    @PostMapping("/payment")
-    public ResponseEntity<PaymentDetails> makePayment() {
-        PaymentDetails paymentDetails = paymentService.processPayment();
-        return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
-                .body(paymentDetails);
-    }
+//    private final PaymentService paymentService;
+//    public PaymentController(PaymentService paymentService) {
+//        this.paymentService = paymentService;
+//    }
+//    @PostMapping("/payment")
+//    public ResponseEntity<PaymentDetails> makePayment() {
+//        PaymentDetails paymentDetails = paymentService.processPayment();
+//        return ResponseEntity
+//                .status(HttpStatus.ACCEPTED)
+//                .body(paymentDetails);
+//    }
 }
