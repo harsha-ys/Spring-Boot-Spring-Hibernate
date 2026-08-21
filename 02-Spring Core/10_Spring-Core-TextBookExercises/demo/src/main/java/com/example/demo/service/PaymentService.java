@@ -12,7 +12,6 @@ public class PaymentService {
     PaymentService(PaymentDetails pD){this.pD = pD;}
 
     public PaymentDetails processPayment() {
-        pD.setAmount(20.3);
-        return pD;
+        throw new NotEnoughMoneyException();
     }
 }

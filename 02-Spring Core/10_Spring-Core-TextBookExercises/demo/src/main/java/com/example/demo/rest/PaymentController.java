@@ -4,18 +4,26 @@ import com.example.demo.model.PaymentDetails;
 import com.example.demo.service.PaymentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.logging.Logger;
 
 @RestController
 public class PaymentController {
+/*    private static Logger logger =
+            Logger.getLogger(PaymentController.class.getName());
+    @PostMapping("/payment")
+    public ResponseEntity<PaymentDetails> makePayment(
+            @RequestBody PaymentDetails paymentDetails) {
+        logger.info("Received payment " + paymentDetails.getAmount());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(paymentDetails);
+    }*/
+
     private final PaymentService paymentService;
     public PaymentController(PaymentService paymentService) {
         this.paymentService = paymentService;
     }
-    @GetMapping("/payment")
+    @PostMapping("/payment")
     public ResponseEntity<PaymentDetails> makePayment() {
         PaymentDetails paymentDetails = paymentService.processPayment();
         return ResponseEntity
