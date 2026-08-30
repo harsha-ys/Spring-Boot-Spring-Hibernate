@@ -1,7 +1,6 @@
 package com.example.demo.rest;
 
 import com.example.demo.model.PaymentDetails;
-import com.example.demo.service.PaymentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
